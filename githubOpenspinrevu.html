@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Launching Bluebeam</title>
+  <script>
+    window.onload = function () {
+      // Get ?file= URL parameter
+      const params = new URLSearchParams(window.location.search);
+      const fileUrl = params.get("file");
+
+      if (fileUrl) {
+        // Build full custom URI
+        const revuLink = "openspinrevu:" + decodeURIComponent(fileUrl);
+        window.location.href = revuLink;
+      } else {
+        document.body.innerHTML = "No file specified.";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Launching Bluebeam Revu...</p>
+</body>
+</html>
